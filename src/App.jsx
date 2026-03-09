@@ -13,7 +13,7 @@ const FAQS = [
   { q: "Is the registration free?", a: "Yes, 100% free. No hidden charges whatsoever." },
   { q: "Who is eligible for the scholarship test?", a: "Students from Grades 3 to 8 are eligible." },
   { q: "Which branches are included?", a: "ECIL, Patancheru, Medchal, and Ghatkesar." },
-  { q: "When will results be announced?", a: "Within 5–7 days after the exam (by December 29th)." },
+  { q: "When will results be announced?", a: "Within 5–7 days after the exam " },
   { q: "How will scholarships be applied?", a: "On tuition fees for the 2026–27 academic year." },
 ];
 
@@ -330,7 +330,7 @@ const submit = async () => {
               {!submitted ? (
                 <>
                   <h3 style={{ fontFamily:"'Bebas Neue'", fontSize:24, color:"#1a56db", textAlign:"center", marginBottom:4 }}>Register Your Child</h3>
-                  <p style={{ fontSize:13, color:"#6b7280", textAlign:"center", marginBottom:18 }}>Scholarship Test · Dec 21, 2025</p>
+                  <p style={{ fontSize:13, color:"#6b7280", textAlign:"center", marginBottom:18 }}>Scholarship Test · March 15, 2026</p>
                   <div style={{ display:"flex", flexDirection:"column", gap:10 }}>
                     <input className="fi" placeholder="Student's Full Name *" value={form.name} onChange={e => setForm({...form, name:e.target.value})} />
                     <input className="fi" placeholder="Parent's Name" value={form.parent} onChange={e => setForm({...form, parent:e.target.value})} />
