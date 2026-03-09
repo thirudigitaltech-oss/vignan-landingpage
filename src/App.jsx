@@ -11,7 +11,7 @@ const BRANCHES = [
 
 const FAQS = [
   { q: "Is the registration free?", a: "Yes, 100% free. No hidden charges whatsoever." },
-  { q: "Who is eligible for the scholarship test?", a: "Students from Grades 3 to 8 are eligible." },
+  { q: "Who is eligible for the scholarship test?", a: "Students from Grades 1 to 9 are eligible." },
   { q: "Which branches are included?", a: "ECIL, Patancheru, Medchal, and Ghatkesar." },
   { q: "When will results be announced?", a: "Within 5–7 days after the exam " },
   { q: "How will scholarships be applied?", a: "On tuition fees for the 2026–27 academic year." },
@@ -37,7 +37,7 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    const target = new Date("2025-12-21T08:00:00");
+    const target = new Date("2026-03-15T10:00:00");;
     const tick = () => {
       const diff = target.getTime() - Date.now();
       if (diff <= 0) return;
