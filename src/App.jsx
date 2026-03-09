@@ -104,7 +104,7 @@ const submit = async () => {
           padding: 12px 20px; transition: all 0.3s;
         }
         .nav.solid { background: rgba(255,255,255,0.97); box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
-        .nav-logo-name { font-weight: 50; font-size: 15px; color: #fff; line-height: 1.2; }
+        .nav-logo-name { font-weight: 20; font-size: 15px; color: #fff; line-height: 1.2; }
         .nav-logo-sub  { font-size: 11px; color: rgba(255,255,255,0.7); }
         .nav.solid .nav-logo-name { color: #1a1a2e; }
         .nav.solid .nav-logo-sub  { color: #6b7280; }
@@ -250,7 +250,7 @@ const submit = async () => {
         {/* ── NAV ── */}
         <nav className={"nav" + (scrolled ? " solid" : "")}>
           <div style={{ display:"flex", alignItems:"center", gap:10 }}>
-            <div style={{ width:36, height:36, background:"linear-gradient(135deg,#1a56db,#0a1f6e)", borderRadius:9, display:"flex", alignItems:"center", justifyContent:"center", fontSize:18, flexShrink:0 }}><img src="/vignan logo.webp"/></div>
+            <div style={{ width:10, height:10, background:"linear-gradient(135deg,#1a56db,#0a1f6e)", borderRadius:9, display:"flex", alignItems:"center", justifyContent:"center", fontSize:18, flexShrink:0 }}><img src="/vignan logo.webp"/></div>
             <div>
               <div className="nav-logo-name">Vignan Schools</div>
               <div className="nav-logo-sub">Hyderabad</div>
