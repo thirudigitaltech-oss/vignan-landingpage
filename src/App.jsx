@@ -104,7 +104,7 @@ const submit = async () => {
           padding: 12px 20px; transition: all 0.3s;
         }
         .nav.solid { background: rgba(255,255,255,0.97); box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
-        .nav-logo-name { font-weight: 200; font-size: 15px; color: #fff; line-height: 1.2; }
+        .nav-logo-name { font-weight: 50; font-size: 15px; color: #fff; line-height: 1.2; }
         .nav-logo-sub  { font-size: 11px; color: rgba(255,255,255,0.7); }
         .nav.solid .nav-logo-name { color: #1a1a2e; }
         .nav.solid .nav-logo-sub  { color: #6b7280; }
