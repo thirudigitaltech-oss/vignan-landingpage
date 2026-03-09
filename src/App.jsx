@@ -250,7 +250,7 @@ const submit = async () => {
         {/* ── NAV ── */}
         <nav className={"nav" + (scrolled ? " solid" : "")}>
           <div style={{ display:"flex", alignItems:"center", gap:10 }}>
-            <div style={{ width:10, height:10, background:"linear-gradient(135deg,#1a56db,#0a1f6e)", borderRadius:9, display:"flex", alignItems:"center", justifyContent:"center", fontSize:18, flexShrink:0 }}><img src="/vignan logo.webp" style={{ width:40, height:40, objectFit:"contain" }} /></div>
+            <div style={{ width:10, height:10, background:"linear-gradient(135deg,#1a56db,#0a1f6e)", borderRadius:9, display:"flex", alignItems:"center", justifyContent:"center", fontSize:18, flexShrink:0 }}><img src="/vignan logo.webp" style={{ width:35, height:35, objectFit:"contain" }} /></div>
             <div>
               <div className="nav-logo-name">Vignan Schools</div>
               <div className="nav-logo-sub">Hyderabad</div>
