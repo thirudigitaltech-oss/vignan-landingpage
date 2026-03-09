@@ -37,7 +37,7 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    const target = new Date("2026-03-15T10:00:00");;
+    const target = new Date("2026-03-15T10:00:00");
     const tick = () => {
       const diff = target.getTime() - Date.now();
       if (diff <= 0) return;
