@@ -270,7 +270,7 @@ const submit = async () => {
               <div style={{ marginBottom:16 }}>
                 <span style={{ display:"inline-flex", alignItems:"center", gap:6, background:"rgba(251,191,36,.18)", border:"1px solid rgba(251,191,36,.4)", borderRadius:50, padding:"6px 14px" }}>
                   <span>🗓️</span>
-                  <span style={{ fontSize:12, fontWeight:700, color:"#fcd34d" }}>December 21, Sunday · All 4 Branches</span>
+                  <span style={{ fontSize:12, fontWeight:700, color:"#fcd34d" }}>March 15 th, Sunday · All 4 Branches</span>
                 </span>
               </div>
 
@@ -527,7 +527,7 @@ const submit = async () => {
               Your Child's Best Opportunity<br />Is Just One Test Away!
             </h2>
             <p style={{ fontSize:16, color:"rgba(255,255,255,.9)", lineHeight:1.65, maxWidth:460, margin:"0 auto 28px" }}>
-              Join students across Hyderabad competing for ₹2 Crore in scholarships. December 21st — don't miss it!
+              Join students across Hyderabad competing for ₹2 Crore in scholarships. March 15th — don't miss it!
             </p>
             <button onClick={goForm} className="btn-o"
               style={{ fontSize:18, padding:"16px 44px", background:"#fff", color:"#f97316", boxShadow:"0 10px 34px rgba(0,0,0,.18)" }}>
@@ -543,13 +543,13 @@ const submit = async () => {
         <footer style={{ background:"#0a1f6e", color:"rgba(255,255,255,.5)", textAlign:"center", padding:"22px 20px", fontSize:13 }}>
           <div style={{ color:"rgba(255,255,255,.88)", fontWeight:800, marginBottom:4, fontSize:14 }}>Vignan Schools Hyderabad</div>
           <div>ECIL · Patancheru · Medchal · Ghatkesar</div>
-          <div style={{ marginTop:4 }}>© 2025 Vignan Schools. All rights reserved.</div>
+          <div style={{ marginTop:4 }}>© 2026 Vignan Schools. All rights reserved.</div>
         </footer>
 
         {/* ── MOBILE STICKY BAR ── */}
         <div className="mob-bar">
           <button className="btn-o pulse" onClick={goForm} style={{ width:"100%", fontSize:15, padding:"14px" }}>
-            🎓 Register FREE – Dec 21st Scholarship Test
+            🎓 Register FREE – March 15th Scholarship Test
           </button>
         </div>
 
