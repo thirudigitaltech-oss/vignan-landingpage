@@ -6,7 +6,9 @@ const BRANCHES = [
   { name: "ECIL", full: "Vignan School – ECIL", address: "Lotus Colony, Shiva Sai Enclave, ECIL, Telangana 500083", phone: "+91 97019 33455" },
   { name: "Patancheru", full: "Vignan School – Patancheru", address: "Chinna Kanjarla, Doultabad Road, Patancheru, Telangana 502319", phone: "+91 97019 33455" },
   { name: "Medchal", full: "Vignan School – Medchal", address: "Near Santha Bio Tech, Court Road, Medchal, Telangana 501401", phone: "+91 97019 33455" },
-  { name: "Ghatkesar", full: "Vignan School – Ghatkesar", address: "Kondapur Village, Ghatkesar Mandal, Ranga Reddy District, Telangana 501301", phone: "+91 97019 33455" },
+  { name: "Ghatkesar", full: "Vignan School – Ghatkesar PPN", address: "Kondapur Village, Ghatkesar Mandal, Ranga Reddy District, Telangana 501301", phone: "+91 97019 33455" },
+  { name: "Ghatkesar", full: "Vignan School – WON Ghatkesar", address: "Ghatkesar Mandal & Post, Kondapur, Hyderabad, Telangana 501301", phone: "+91 97019 33455" },
+];
 ];
 
 const FAQS = [
