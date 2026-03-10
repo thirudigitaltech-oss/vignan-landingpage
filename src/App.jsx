@@ -250,7 +250,7 @@ const submit = async () => {
         {/* ── NAV ── */}
         <nav className={"nav" + (scrolled ? " solid" : "")}>
           <div style={{ display:"flex", alignItems:"center", gap:10 }}>
-            <div style={{ width:10, height:10, background:"linear-gradient(135deg,#1a56db,#0a1f6e)", borderRadius:9, display:"flex", alignItems:"center",paddingLeft: "20px" , justifyContent:"center", fontSize:18, flexShrink:0 }}><img src="\3b-Round-corner b.png" style={{ width:100, height:100, objectFit:"contain" }} /></div>
+            <div style={{ width:50, height:40, background:"linear-gradient(135deg,#1a56db,#0a1f6e)", borderRadius:9, display:"flex", alignItems:"center",paddingLeft: "20px" , justifyContent:"center", fontSize:18, flexShrink:0 }}><img src="\3b-Round-corner b.png" style={{ width:100, height:100, objectFit:"contain" }} /></div>
          
           </div>
           <button className="btn-o pulse nav-desk-btn" onClick={goForm} style={{ fontSize:13, padding:"10px 22px" }}>
