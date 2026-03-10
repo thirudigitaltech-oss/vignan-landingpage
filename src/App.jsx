@@ -252,7 +252,14 @@ const submit = async () => {
         {/* ── NAV ── */}
         <nav className={"nav" + (scrolled ? " solid" : "")}>
           <div style={{ display:"flex", alignItems:"center", gap:10 }}>
-            <div><img src="\3b-Round-corner b.png" style={{ width:"100px", height:"36px", objectFit:"contain" }} /><a href="https://vignanschools.org"/></div>
+            <div>
+  <a href="https://vignanschools.org" target="_blank" rel="noopener noreferrer">
+    <img 
+      src="/3b-Round-corner b.png"
+      style={{ width: "100px", height: "36px", objectFit: "contain" }}
+    />
+  </a>
+</div>
          
           </div>
           <button className="btn-o pulse nav-desk-btn" onClick={goForm} style={{ fontSize:13, padding:"10px 22px" }}>
