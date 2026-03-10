@@ -337,7 +337,7 @@ const submit = async () => {
                     <input className="fi" type="tel" placeholder="Mobile Number *" value={form.phone} onChange={e => setForm({...form, phone:e.target.value})} />
                     <select className="fi" value={form.grade} onChange={e => setForm({...form, grade:e.target.value})}>
                       <option value="">Select Grade *</option>
-                      {["Grade 3","Grade 4","Grade 5","Grade 6","Grade 7","Grade 8"].map(g => <option key={g}>{g}</option>)}
+                      {["Grade 1","Grade 2","Grade 3","Grade 4","Grade 5","Grade 6","Grade 7","Grade 8","grade 9"].map(g => <option key={g}>{g}</option>)}
                     </select>
                     <select className="fi" value={form.branch} onChange={e => setForm({...form, branch:e.target.value})}>
                       <option value="">Select Branch *</option>
