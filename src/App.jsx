@@ -8,7 +8,7 @@ const BRANCHES = [
   { name: "Medchal", full: "Vignan School – Medchal", address: "Near Santha Bio Tech, Court Road, Medchal, Telangana 501401", phone: "+91 97019 33455" },
   { name: "Ghatkesar", full: "Vignan School – Ghatkesar PPN", address: "Kondapur Village, Ghatkesar Mandal, Ranga Reddy District, Telangana 501301", phone: "+91 97019 33455" },
   { name: "Ghatkesar", full: "Vignan School – WON Ghatkesar", address: "Ghatkesar Mandal & Post, Kondapur, Hyderabad, Telangana 501301", phone: "+91 97019 33455" },
-];
+
 ];
 
 const FAQS = [
