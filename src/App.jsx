@@ -8,7 +8,6 @@ const BRANCHES = [
   { name: "Medchal", full: "Vignan School – Medchal", address: "Near Santha Bio Tech, Court Road, Medchal, Telangana 501401", phone: "+91 97019 33455" },
   { name: "Ghatkesar-PPN", full: "Vignan School – Ghatkesar PPN", address: "Kondapur Village, Ghatkesar Mandal, Ranga Reddy District, Telangana 501301", phone: "+91 97019 33455" },
   { name: "WON-Ghatkesar", full: "Vignan School – WOS Ghatkesar", address: "Ghatkesar Mandal & Post, Kondapur, Hyderabad, Telangana 501301", phone: "+91 97019 33455" },
-
 ];
 
 const FAQS = [
@@ -27,15 +26,9 @@ const TESTIMONIALS = [
 
 export default function App() {
   const [openFaq, setOpenFaq] = useState(null);
-  const [form, setForm] = useState({
-  name: "",
-  parent: "",
-  phone: "",
-  grade: "",
-  branch: ""
-});
-  const [loading, setLoading] = useState(false);
+  const [form, setForm] = useState({ name: "", parent: "", phone: "", grade: "", branch: "" });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false); // ✅ FIX 2: Loading state
   const [scrolled, setScrolled] = useState(false);
   const [cd, setCd] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
@@ -62,28 +55,28 @@ export default function App() {
     return () => clearInterval(id);
   }, []);
 
-const submit = async () => {
-  if (!form.name || !form.phone || !form.grade || !form.branch) {
-    alert("Please fill all required fields!");
-    return;
-  }
-  setLoading(true); // ← disable + loading start
-  try {
-    const params = new URLSearchParams({
-      name: form.name,
-      parent: form.parent,
-      phone: form.phone,
-      grade: form.grade,
-      branch: form.branch.trim().replace(/\s+/g, ' '),
-    });
-    await fetch(SHEET_URL + "?" + params.toString(), {
-      method: "GET",
-      mode: "no-cors",
-    });
-  } catch (err) {}
-  setLoading(false); // ← loading stop
-  setSubmitted(true);
-};
+  const submit = async () => {
+    if (!form.name || !form.phone || !form.grade || !form.branch) {
+      alert("Please fill all required fields!");
+      return;
+    }
+    setLoading(true); // ✅ FIX 2: Disable button + show loading
+    try {
+      const params = new URLSearchParams({
+        name: form.name,
+        parent: form.parent,
+        phone: form.phone,
+        grade: form.grade,
+        branch: form.branch.trim().replace(/\s+/g, ' '),
+      });
+      await fetch(SHEET_URL + "?" + params.toString(), {
+        method: "GET",
+        mode: "no-cors",
+      });
+    } catch (err) {}
+    setLoading(false); // ✅ FIX 2: Re-enable (not needed but clean)
+    setSubmitted(true);
+  };
 
   const goForm = () => document.getElementById("reg-form")?.scrollIntoView({ behavior: "smooth" });
 
@@ -108,7 +101,6 @@ const submit = async () => {
 
         .app { width: 100%; overflow-x: hidden; font-family: var(--font); color: #1a1a2e; background: #f0f4ff; }
 
-        /* ── NAV ── */
         .nav {
           position: fixed; top: 0; left: 0; width: 100%; z-index: 999;
           display: flex; align-items: center; justify-content: space-between;
@@ -120,7 +112,6 @@ const submit = async () => {
         .nav.solid .nav-logo-name { color: #1a1a2e; }
         .nav.solid .nav-logo-sub  { color: #6b7280; }
 
-        /* ── BTNs ── */
         .btn-o {
           background: linear-gradient(135deg, var(--orange), var(--red));
           color: #fff; border: none; border-radius: 50px;
@@ -137,6 +128,7 @@ const submit = async () => {
           box-shadow: 0 6px 20px rgba(26,86,219,.35);
         }
         .btn-b:hover { transform: translateY(-2px); }
+        .btn-b:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
 
         @keyframes pulse {
           0%,100% { box-shadow: 0 6px 22px rgba(249,115,22,.44); }
@@ -144,10 +136,17 @@ const submit = async () => {
         }
         .pulse { animation: pulse 2.5s ease-in-out infinite; }
 
-        /* ── HERO ── */
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .spinner {
+          display: inline-block; width: 16px; height: 16px;
+          border: 2px solid rgba(255,255,255,0.4);
+          border-top-color: #fff; border-radius: 50%;
+          animation: spin 0.7s linear infinite;
+          vertical-align: middle; margin-right: 8px;
+        }
+
         .hero { width: 100%; background: linear-gradient(150deg, var(--dark) 0%, var(--blue) 58%, #1e3a8a 100%); padding-top: 70px; position: relative; overflow: hidden; }
 
-        /* Desktop: side by side */
         .hero-grid {
           width: 100%; max-width: 1300px; margin: 0 auto;
           padding: 56px 60px 52px;
@@ -164,12 +163,10 @@ const submit = async () => {
 
         .stats { width: 100%; background: rgba(0,0,0,.22); border-top: 1px solid rgba(255,255,255,.1); display: flex; flex-wrap: wrap; justify-content: space-around; gap: 10px; padding: 22px 20px; }
 
-        /* ── FORM CARD ── */
         .fcard { background: #fff; border-radius: 22px; padding: 38px 28px 28px; box-shadow: 0 28px 80px rgba(0,0,0,.3); position: relative; }
         .fi { width: 100%; padding: 13px 15px; border: 2px solid #dbeafe; border-radius: 10px; font-size: 15px; font-family: var(--font); color: #1a1a2e; background: #fff; outline: none; appearance: none; transition: border-color .2s; margin-bottom: 0; }
         .fi:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(26,86,219,.12); }
 
-        /* ── SECTIONS ── */
         .sec { width: 100%; padding: 72px 20px; }
         .sec-in { max-width: 1200px; margin: 0 auto; }
         .sec-hd { text-align: center; margin-bottom: 44px; }
@@ -177,7 +174,6 @@ const submit = async () => {
         .pill-b { display: inline-block; background: #dbeafe; color: var(--blue); border-radius: 50px; padding: 6px 18px; font-size: 13px; font-weight: 700; margin-bottom: 10px; }
         .pill-w { display: inline-block; background: rgba(255,255,255,.16); color: #fff; border-radius: 50px; padding: 6px 18px; font-size: 13px; font-weight: 700; margin-bottom: 12px; }
 
-        /* ── GRIDS ── */
         .g3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
         .g4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; }
         .g5 { display: grid; grid-template-columns: repeat(5,1fr); gap: 16px; }
@@ -185,67 +181,39 @@ const submit = async () => {
         .card { transition: transform .22s, box-shadow .22s; }
         .card:hover { transform: translateY(-5px); }
 
-        /* ── MOBILE STICKY ── */
         .mob-bar { display: none; position: fixed; bottom: 0; left: 0; width: 100%; z-index: 998; background: #fff; padding: 12px 16px; box-shadow: 0 -4px 18px rgba(0,0,0,.1); border-top: 2px solid #e5edff; }
 
-        /* ════════════════════════════
-           TABLET  ≤ 1024px
-        ════════════════════════════ */
         @media (max-width: 1024px) {
           .hero-grid { padding: 48px 32px 44px; gap: 36px; grid-template-columns: 1fr 370px; }
           .hl { font-size: 58px; }
           .g5 { grid-template-columns: repeat(3,1fr); }
         }
 
-        /* ════════════════════════════
-           MOBILE  ≤ 768px  ← MAIN FIX
-        ════════════════════════════ */
         @media (max-width: 768px) {
-
-          /* NAV */
           .nav { padding: 10px 16px; }
           .nav-desk-btn { display: none !important; }
-
-          /* HERO — stack vertically */
           .hero { padding-top: 64px; }
-          .hero-grid {
-            grid-template-columns: 1fr !important;
-            padding: 28px 16px 36px !important;
-            gap: 28px !important;
-          }
+          .hero-grid { grid-template-columns: 1fr !important; padding: 28px 16px 36px !important; gap: 28px !important; }
           .hero-left { text-align: center; }
           .hl { font-size: 42px; }
           .badge-row { justify-content: center; }
           .cd-row { justify-content: center; }
           .hero-ctas { flex-direction: column; align-items: center; gap: 12px !important; }
           .hero-checks { justify-content: center; flex-wrap: wrap; gap: 10px !important; }
-
-          /* FORM — full width, no overlap */
           .fcard { border-radius: 18px; padding: 36px 20px 24px; box-shadow: 0 12px 40px rgba(0,0,0,.18); }
-
-          /* STATS */
           .stats { padding: 16px; gap: 6px; }
           .stats .snum { font-size: 28px !important; }
           .stats .slbl { font-size: 11px !important; }
-
-          /* SECTIONS */
           .sec { padding: 52px 16px; }
           .st { font-size: 30px; }
           .sec-hd { margin-bottom: 32px; }
-
-          /* GRIDS → single column on mobile */
           .g3 { grid-template-columns: 1fr !important; gap: 16px; }
           .g4 { grid-template-columns: 1fr !important; gap: 14px; }
           .g5 { grid-template-columns: repeat(2,1fr) !important; gap: 12px; }
-
-          /* MOBILE STICKY */
           .mob-bar { display: block; }
           footer { padding-bottom: 88px !important; }
         }
 
-        /* ════════════════════════════
-           SMALL MOBILE  ≤ 380px
-        ════════════════════════════ */
         @media (max-width: 380px) {
           .hl { font-size: 34px; }
           .st { font-size: 26px; }
@@ -262,14 +230,10 @@ const submit = async () => {
         <nav className={"nav" + (scrolled ? " solid" : "")}>
           <div style={{ display:"flex", alignItems:"center", gap:10 }}>
             <div>
-  <a href="https://vignanschools.org" target="_blank" rel="noopener noreferrer">
-    <img 
-      src="/3b-Round-corner b.png"
-      style={{ width: "100px", height: "36px", objectFit: "contain" }}
-    />
-  </a>
-</div>
-         
+              <a href="https://vignanschools.org" target="_blank" rel="noopener noreferrer">
+                <img src="/3b-Round-corner b.png" style={{ width:"100px", height:"36px", objectFit:"contain" }} />
+              </a>
+            </div>
           </div>
           <button className="btn-o pulse nav-desk-btn" onClick={goForm} style={{ fontSize:13, padding:"10px 22px" }}>
             🆓 Register FREE
@@ -299,7 +263,6 @@ const submit = async () => {
                 Win from a <strong style={{ color:"#fbbf24" }}>₹2 Crore Scholarship Pool</strong>. Every student scoring 50%+ gets guaranteed fee benefits. Registration is <strong style={{ color:"#4ade80" }}>100% FREE!</strong>
               </p>
 
-              {/* Reward badges */}
               <div className="badge-row">
                 {[
                   { s:"95%+", l:"100% Fee Waiver", bg:"linear-gradient(135deg,#f59e0b,#fbbf24)", c:"#1a1a2e" },
@@ -313,7 +276,6 @@ const submit = async () => {
                 ))}
               </div>
 
-              {/* Countdown */}
               <div style={{ marginBottom:24 }}>
                 <div style={{ fontSize:11, color:"rgba(255,255,255,.5)", letterSpacing:1.5, textTransform:"uppercase", marginBottom:8 }}>Exam Starts In</div>
                 <div className="cd-row">
@@ -326,7 +288,6 @@ const submit = async () => {
                 </div>
               </div>
 
-              {/* CTAs */}
               <div className="hero-ctas" style={{ display:"flex", gap:16, alignItems:"center", flexWrap:"wrap" }}>
                 <button className="btn-o pulse" onClick={goForm} style={{ fontSize:15, padding:"14px 32px" }}>🎓 Register for FREE Now</button>
                 <div className="hero-checks" style={{ display:"flex", gap:14, color:"rgba(255,255,255,.8)", fontSize:13 }}>
@@ -354,32 +315,26 @@ const submit = async () => {
                       <option value="">Select Grade *</option>
                       {["Grade 1","Grade 2","Grade 3","Grade 4","Grade 5","Grade 6","Grade 7","Grade 8","grade 9"].map(g => <option key={g}>{g}</option>)}
                     </select>
-<select
-  value={form.branch}
-  onChange={(e) => setForm({ ...form, branch: e.target.value })}
->
-  <option value="">Select Branch</option>
+                    <select className="fi" value={form.branch} onChange={(e) => setForm({ ...form, branch: e.target.value })}>
+                      <option value="">Select Branch</option>
+                      {BRANCHES.map((b) => (
+                        <option key={b.full} value={b.name}>{b.full}</option>
+                      ))}
+                    </select>
 
-  {BRANCHES.map((b) => (
-    <option key={b.full} value={b.name}>
-  {b.full}
-</option>
-  ))}
-</select>
-                    <button 
-  className="btn-b" 
-  onClick={submit} 
-  disabled={loading}
-  style={{ 
-    fontSize:15, 
-    padding:"14px", 
-    marginTop:4,
-    opacity: loading ? 0.7 : 1,
-    cursor: loading ? "not-allowed" : "pointer"
-  }}
->
-  {loading ? "⏳ Submitting..." : "Register Now – It's FREE! 🎓"}
-</button>
+                    {/* ✅ FIX 2: Loading + Disabled button */}
+                    <button
+                      className="btn-b"
+                      onClick={submit}
+                      disabled={loading}
+                      style={{ fontSize:15, padding:"14px", marginTop:4 }}
+                    >
+                      {loading ? (
+                        <><span className="spinner"></span>Submitting...</>
+                      ) : (
+                        "Register Now – It's FREE! 🎓"
+                      )}
+                    </button>
                   </div>
                   <p style={{ fontSize:11, color:"#9ca3af", textAlign:"center", marginTop:10 }}>🔒 Your information is safe with us.</p>
                 </>
@@ -391,7 +346,8 @@ const submit = async () => {
                     Thank you, <strong>{form.name}</strong>!<br />We'll call you at <strong>{form.phone}</strong>.
                   </p>
                   <div style={{ marginTop:16, background:"#f0f4ff", borderRadius:12, padding:16 }}>
-                    <div style={{ fontWeight:800, color:"#1a56db" }}> March 15, 2026</div>
+                    {/* ✅ FIX 1: 📅 తీసేసి plain text వాడాం */}
+                    <div style={{ fontWeight:800, color:"#1a56db" }}>March 15, 2026</div>
                     <div style={{ color:"#6b7280", fontSize:14, marginTop:4 }}>Branch: {form.branch}</div>
                   </div>
                 </div>
