@@ -6,8 +6,8 @@ const BRANCHES = [
   { name: "ECIL", full: "Vignan School – ECIL", address: "Lotus Colony, Shiva Sai Enclave, ECIL, Telangana 500083", phone: "+91 97019 33455" },
   { name: "Patancheru", full: "Vignan School – Patancheru", address: "Chinna Kanjarla, Doultabad Road, Patancheru, Telangana 502319", phone: "+91 97019 33455" },
   { name: "Medchal", full: "Vignan School – Medchal", address: "Near Santha Bio Tech, Court Road, Medchal, Telangana 501401", phone: "+91 97019 33455" },
-  { name: "Ghatkesar PPN", full: "Vignan School – Ghatkesar PPN", address: "Kondapur Village, Ghatkesar Mandal, Ranga Reddy District, Telangana 501301", phone: "+91 97019 33455" },
-  { name: "WON Ghatkesar", full: "Vignan School – WOS Ghatkesar", address: "Ghatkesar Mandal & Post, Kondapur, Hyderabad, Telangana 501301", phone: "+91 97019 33455" },
+  { name: "Ghatkesar-PPN", full: "Vignan School – Ghatkesar PPN", address: "Kondapur Village, Ghatkesar Mandal, Ranga Reddy District, Telangana 501301", phone: "+91 97019 33455" },
+  { name: "WON-Ghatkesar", full: "Vignan School – WOS Ghatkesar", address: "Ghatkesar Mandal & Post, Kondapur, Hyderabad, Telangana 501301", phone: "+91 97019 33455" },
 
 ];
 
@@ -72,7 +72,7 @@ const submit = async () => {
   parent: form.parent,
   phone: form.phone,
   grade: form.grade,
-  branch: form.branch.trim(),
+  branch: form.branch.trim().replace(/\s+/g, ' '),
 });
     await fetch(SHEET_URL + "?" + params.toString(), {
       method: "GET",
