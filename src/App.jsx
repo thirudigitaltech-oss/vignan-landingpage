@@ -29,7 +29,9 @@ export default function App() {
   const [openFaq, setOpenFaq] = useState(null);
   const [form, setForm] = useState({
   name: "",
+  parent: "",
   phone: "",
+  grade: "",
   branch: ""
 });
   const [submitted, setSubmitted] = useState(false);
