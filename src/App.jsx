@@ -7,7 +7,7 @@ const BRANCHES = [
   { name: "Patancheru", full: "Vignan School – Patancheru", address: "Chinna Kanjarla, Doultabad Road, Patancheru, Telangana 502319", phone: "+91 97019 33455" },
   { name: "Medchal", full: "Vignan School – Medchal", address: "Near Santha Bio Tech, Court Road, Medchal, Telangana 501401", phone: "+91 97019 33455" },
   { name: "Ghatkesar PPN", full: "Vignan School – Ghatkesar PPN", address: "Kondapur Village, Ghatkesar Mandal, Ranga Reddy District, Telangana 501301", phone: "+91 97019 33455" },
-  { name: "Ghatkesar WON", full: "Vignan School – WOS Ghatkesar", address: "Ghatkesar Mandal & Post, Kondapur, Hyderabad, Telangana 501301", phone: "+91 97019 33455" },
+  { name: "WON Ghatkesar", full: "Vignan School – WOS Ghatkesar", address: "Ghatkesar Mandal & Post, Kondapur, Hyderabad, Telangana 501301", phone: "+91 97019 33455" },
 
 ];
 
