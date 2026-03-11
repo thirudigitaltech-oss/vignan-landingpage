@@ -358,9 +358,9 @@ const submit = async () => {
   <option value="">Select Branch</option>
 
   {BRANCHES.map((b) => (
-    <option key={b.full} value={b.full}>
-      {b.full}
-    </option>
+    <option key={b.full} value={b.name}>
+  {b.full}
+</option>
   ))}
 </select>
                     <button className="btn-b" onClick={submit} style={{ fontSize:15, padding:"14px", marginTop:4 }}>
