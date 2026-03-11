@@ -25,6 +25,7 @@ const TESTIMONIALS = [
 ];
 
 export default function App() {
+  console.log("NEW BUILD TEST 777");
   const [openFaq, setOpenFaq] = useState(null);
   const [form, setForm] = useState({ name: "", parent: "", phone: "", grade: "", branch: "" });
   const [submitted, setSubmitted] = useState(false);
