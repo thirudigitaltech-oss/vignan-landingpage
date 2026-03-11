@@ -3,11 +3,11 @@ import { useState, useEffect } from "react";
 const SHEET_URL = "https://script.google.com/macros/s/AKfycbzku3AU1EBBMyC2LhGFyBjCepBZesUkF8i51HniHkiisnSH5c6TjUUkmiBmnr8bWkMo/exec";
 
 const BRANCHES = [
-  { id: "ECIL", name: "Vignan School – ECIL", address: "Lotus Colony, Shiva Sai Enclave, ECIL, Telangana 500083", phone: "+91 97019 33455" },
-  { id: "Patancheru", name: "Vignan School – Patancheru", address: "Chinna Kanjarla, Doultabad Road, Patancheru, Telangana 502319", phone: "+91 97019 33455" },
-  { id: "Medchal", name: "Vignan School – Medchal", address: "Near Santha Bio Tech, Court Road, Medchal, Telangana 501401", phone: "+91 97019 33455" },
-  { id: "Ghatkesar PPN", name: "Vignan School – Ghatkesar PPN", address: "Kondapur Village, Ghatkesar Mandal, Ranga Reddy District, Telangana 501301", phone: "+91 97019 33455" },
-  { id: "WON Ghatkesar", name: "Vignan School – WOS Ghatkesar", address: "Ghatkesar Mandal & Post, Kondapur, Hyderabad, Telangana 501301", phone: "+91 97019 33455" },
+  { name: "ECIL", full: "Vignan School – ECIL", address: "Lotus Colony, Shiva Sai Enclave, ECIL, Telangana 500083", phone: "+91 97019 33455" },
+  { name: "Patancheru", full: "Vignan School – Patancheru", address: "Chinna Kanjarla, Doultabad Road, Patancheru, Telangana 502319", phone: "+91 97019 33455" },
+  { name: "Medchal", full: "Vignan School – Medchal", address: "Near Santha Bio Tech, Court Road, Medchal, Telangana 501401", phone: "+91 97019 33455" },
+  { name: "Ghatkesar PPN", full: "Vignan School – Ghatkesar PPN", address: "Kondapur Village, Ghatkesar Mandal, Ranga Reddy District, Telangana 501301", phone: "+91 97019 33455" },
+  { name: "WON Ghatkesar", full: "Vignan School – WOS Ghatkesar", address: "Ghatkesar Mandal & Post, Kondapur, Hyderabad, Telangana 501301", phone: "+91 97019 33455" },
 
 ];
 
@@ -352,15 +352,14 @@ const submit = async () => {
                       {["Grade 1","Grade 2","Grade 3","Grade 4","Grade 5","Grade 6","Grade 7","Grade 8","grade 9"].map(g => <option key={g}>{g}</option>)}
                     </select>
 <select
-  className="fi"
   value={form.branch}
   onChange={(e) => setForm({ ...form, branch: e.target.value })}
 >
   <option value="">Select Branch</option>
 
   {BRANCHES.map((b) => (
-    <option key={b.id} value={b.name}>
-      {b.name}
+    <option key={b.full} value={b.full}>
+      {b.full}
     </option>
   ))}
 </select>
