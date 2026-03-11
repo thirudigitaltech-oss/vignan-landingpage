@@ -346,7 +346,7 @@ export default function App() {
                     Thank you, <strong>{form.name}</strong>!<br />We'll call you at <strong>{form.phone}</strong>.
                   </p>
                   <div style={{ marginTop:16, background:"#f0f4ff", borderRadius:12, padding:16 }}>
-                    {/* ✅ FIX 1: 📅 తీసేసి plain text వాడాం */}
+       
                     <div style={{ fontWeight:800, color:"#1a56db" }}>March 15, 2026</div>
                     <div style={{ color:"#6b7280", fontSize:14, marginTop:4 }}>Branch: {form.branch}</div>
                   </div>
