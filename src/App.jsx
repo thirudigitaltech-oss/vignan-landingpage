@@ -27,7 +27,11 @@ const TESTIMONIALS = [
 
 export default function App() {
   const [openFaq, setOpenFaq] = useState(null);
-  const [form, setForm] = useState({ name: "", parent: "", phone: "", grade: "", branch: "" });
+  const [form, setForm] = useState({
+  name: "",
+  phone: "",
+  branch: ""
+});
   const [submitted, setSubmitted] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [cd, setCd] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
