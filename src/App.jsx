@@ -34,6 +34,7 @@ export default function App() {
   grade: "",
   branch: ""
 });
+  const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [cd, setCd] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
@@ -66,19 +67,21 @@ const submit = async () => {
     alert("Please fill all required fields!");
     return;
   }
+  setLoading(true); // ← disable + loading start
   try {
     const params = new URLSearchParams({
-  name: form.name,
-  parent: form.parent,
-  phone: form.phone,
-  grade: form.grade,
-  branch: form.branch.trim().replace(/\s+/g, ' '),
-});
+      name: form.name,
+      parent: form.parent,
+      phone: form.phone,
+      grade: form.grade,
+      branch: form.branch.trim().replace(/\s+/g, ' '),
+    });
     await fetch(SHEET_URL + "?" + params.toString(), {
       method: "GET",
       mode: "no-cors",
     });
   } catch (err) {}
+  setLoading(false); // ← loading stop
   setSubmitted(true);
 };
 
@@ -363,9 +366,20 @@ const submit = async () => {
 </option>
   ))}
 </select>
-                    <button className="btn-b" onClick={submit} style={{ fontSize:15, padding:"14px", marginTop:4 }}>
-                      Register Now – It's FREE! 🎓
-                    </button>
+                    <button 
+  className="btn-b" 
+  onClick={submit} 
+  disabled={loading}
+  style={{ 
+    fontSize:15, 
+    padding:"14px", 
+    marginTop:4,
+    opacity: loading ? 0.7 : 1,
+    cursor: loading ? "not-allowed" : "pointer"
+  }}
+>
+  {loading ? "⏳ Submitting..." : "Register Now – It's FREE! 🎓"}
+</button>
                   </div>
                   <p style={{ fontSize:11, color:"#9ca3af", textAlign:"center", marginTop:10 }}>🔒 Your information is safe with us.</p>
                 </>
@@ -377,7 +391,7 @@ const submit = async () => {
                     Thank you, <strong>{form.name}</strong>!<br />We'll call you at <strong>{form.phone}</strong>.
                   </p>
                   <div style={{ marginTop:16, background:"#f0f4ff", borderRadius:12, padding:16 }}>
-                    <div style={{ fontWeight:800, color:"#1a56db" }}>📅 March 15, 2026</div>
+                    <div style={{ fontWeight:800, color:"#1a56db" }}> March 15, 2026</div>
                     <div style={{ color:"#6b7280", fontSize:14, marginTop:4 }}>Branch: {form.branch}</div>
                   </div>
                 </div>
