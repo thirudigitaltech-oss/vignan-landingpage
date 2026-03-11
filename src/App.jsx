@@ -356,7 +356,7 @@ const submit = async () => {
   value={form.branch}
   onChange={(e) => setForm({ ...form, branch: e.target.value })}
 >
-  <option value="">Select Branch *</option>
+  <option value="">Select Branch</option>
 
   {BRANCHES.map((b) => (
     <option key={b.full} value={b.full}>
