@@ -31,7 +31,7 @@ export default function App() {
   const [loading, setLoading] = useState(false); // ✅ FIX 2: Loading state
   const [scrolled, setScrolled] = useState(false);
   const [cd, setCd] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-console.log("NEW BUILD TEST 123");
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", onScroll);
