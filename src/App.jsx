@@ -3,11 +3,11 @@ import { useState, useEffect } from "react";
 const SHEET_URL = "https://script.google.com/macros/s/AKfycbzku3AU1EBBMyC2LhGFyBjCepBZesUkF8i51HniHkiisnSH5c6TjUUkmiBmnr8bWkMo/exec";
 
 const BRANCHES = [
-  { name: "ECIL", full: "Vignan School – ECIL", address: "Lotus Colony, Shiva Sai Enclave, ECIL, Telangana 500083", phone: "+91 97019 33455" }, 
-  { name: "Patancheru", full: "Vignan School – Patancheru", address: "Chinna Kanjarla, Doultabad Road, Patancheru, Telangana 502319", phone: "+91 97019 33455" },
-  { name: "Medchal", full: "Vignan School – Medchal", address: "Near Santha Bio Tech, Court Road, Medchal, Telangana 501401", phone: "+91 97019 33455" },
-  { name: "Ghatkesar-PPN", full: "Vignan School – Ghatkesar PPN", address: "Kondapur Village, Ghatkesar Mandal, Ranga Reddy District, Telangana 501301", phone: "+91 97019 33455" },
-  { name: "WON-Ghatkesar", full: "Vignan School – WOS Ghatkesar", address: "Ghatkesar Mandal & Post, Kondapur, Hyderabad, Telangana 501301", phone: "+91 97019 33455" },
+  { name: "ECIL", full: "Vignan School – ECIL", address: "Lotus Colony, Shiva Sai Enclave, ECIL, Telangana 500083", phone: "+91 97019 33455", qr: "/Ecil Location.png" },
+  { name: "Patancheru", full: "Vignan School – Patancheru", address: "Chinna Kanjarla, Doultabad Road, Patancheru, Telangana 502319", phone: "+91 97019 33455", qr: "/Patancheru Location.png" },
+  { name: "Medchal", full: "Vignan School – Medchal", address: "Near Santha Bio Tech, Court Road, Medchal, Telangana 501401", phone: "+91 97019 33455", qr: "/Medchal Location.png" },
+  { name: "Ghatkesar-PPN", full: "Vignan School – Ghatkesar PPN", address: "Kondapur Village, Ghatkesar Mandal, Ranga Reddy District, Telangana 501301", phone: "+91 97019 33455", qr: "/Ghatkesar Location.png" },
+  { name: "WON-Ghatkesar", full: "Vignan School – WOS Ghatkesar", address: "Ghatkesar Mandal & Post, Kondapur, Hyderabad, Telangana 501301", phone: "+91 97019 33455", qr: "/Ghatkesar Location.png" },
 ];
 
 const FAQS = [
@@ -29,7 +29,7 @@ export default function App() {
   const [openFaq, setOpenFaq] = useState(null);
   const [form, setForm] = useState({ name: "", parent: "", phone: "", grade: "", branch: "" });
   const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false); // ✅ FIX 2: Loading state
+  const [loading, setLoading] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [cd, setCd] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
@@ -61,7 +61,7 @@ export default function App() {
       alert("Please fill all required fields!");
       return;
     }
-    setLoading(true); // ✅ FIX 2: Disable button + show loading
+    setLoading(true);
     try {
       const params = new URLSearchParams({
         name: form.name,
@@ -75,7 +75,7 @@ export default function App() {
         mode: "no-cors",
       });
     } catch (err) {}
-    setLoading(false); // ✅ FIX 2: Re-enable (not needed but clean)
+    setLoading(false);
     setSubmitted(true);
   };
 
@@ -244,8 +244,6 @@ export default function App() {
         {/* ── HERO ── */}
         <section className="hero">
           <div className="hero-grid">
-
-            {/* LEFT */}
             <div className="hero-left">
               <div style={{ marginBottom:16 }}>
                 <span style={{ display:"inline-flex", alignItems:"center", gap:6, background:"rgba(251,191,36,.18)", border:"1px solid rgba(251,191,36,.4)", borderRadius:50, padding:"6px 14px" }}>
@@ -322,24 +320,12 @@ export default function App() {
                         <option key={b.full} value={b.name}>{b.full}</option>
                       ))}
                     </select>
-
-                    {/* ✅ FIX 2: Loading + Disabled button */}
-                    <button
-                      className="btn-b"
-                      onClick={submit}
-                      disabled={loading}
-                      style={{ fontSize:15, padding:"14px", marginTop:4 }}
-                    >
-                      {loading ? (
-                        <><span className="spinner"></span>Submitting...</>
-                      ) : (
-                        "Register Now – It's FREE! 🎓"
-                      )}
+                    <button className="btn-b" onClick={submit} disabled={loading} style={{ fontSize:15, padding:"14px", marginTop:4 }}>
+                      {loading ? (<><span className="spinner"></span>Submitting...</>) : ("Register Now – It's FREE! 🎓")}
                     </button>
                   </div>
                   <p style={{ fontSize:11, color:"#9ca3af", textAlign:"center", marginTop:10 }}>🔒 Your information is safe with us.</p>
                   <strong><p style={{ fontSize:11, color:"#9ca3af", textAlign:"center", marginTop:10 }}>Note: This scholarship test is available only in these branches, not in all Vignan branches.</p></strong>
-
                 </>
               ) : (
                 <div style={{ textAlign:"center", padding:"16px 0" }}>
@@ -349,7 +335,6 @@ export default function App() {
                     Thank you, <strong>{form.name}</strong>!<br />We'll call you at <strong>{form.phone}</strong>.
                   </p>
                   <div style={{ marginTop:16, background:"#f0f4ff", borderRadius:12, padding:16 }}>
-       
                     <div style={{ fontWeight:800, color:"#1a56db" }}>March 15, 2026</div>
                     <div style={{ color:"#6b7280", fontSize:14, marginTop:4 }}>Branch: {form.branch}</div>
                   </div>
@@ -407,7 +392,7 @@ export default function App() {
             <div className="sec-hd">
               <div className="pill-b">4 LOCATIONS</div>
               <span className="st" style={{ color:"#1a1a2e" }}>Choose Your Nearest Campus</span>
-              <strong><span  style={{ color:"#1a1a2e",fontsize:"12px" }}>Note: This scholarship test is available only in these branches, not in all Vignan branches.</span></strong>
+              <strong><span style={{ color:"#1a1a2e", fontSize:"12px" }}>Note: This scholarship test is available only in these branches, not in all Vignan branches.</span></strong>
             </div>
             <div className="g4">
               {BRANCHES.map(b => (
@@ -425,6 +410,17 @@ export default function App() {
                       <span style={{ fontSize:13 }}>📞</span>
                       <a href={"tel:"+b.phone} style={{ fontSize:13, color:"#1a56db", fontWeight:700, textDecoration:"none" }}>{b.phone}</a>
                     </div>
+
+                    {/* ✅ QR Code - Location Scanner */}
+                    <div style={{ textAlign:"center", marginBottom:12 }}>
+                      <p style={{ fontSize:11, color:"#9ca3af", marginBottom:6 }}>📍 Scan for Location</p>
+                      <img
+                        src={b.qr}
+                        alt={b.name + " location QR"}
+                        style={{ width:"110px", height:"110px", borderRadius:8, border:"1px solid #e5edff", objectFit:"contain" }}
+                      />
+                    </div>
+
                     <button className="btn-b" onClick={goForm} style={{ fontSize:13, padding:"10px" }}>
                       Register – {b.name} →
                     </button>
