@@ -338,7 +338,7 @@ export default function App() {
                     </button>
                   </div>
                   <p style={{ fontSize:11, color:"#9ca3af", textAlign:"center", marginTop:10 }}>🔒 Your information is safe with us.</p>
-                  <p style={{ fontSize:11, color:"#9ca3af", textAlign:"center", marginTop:10 }}>Note: This scholarship test is available only in these branches, not in all Vignan branches.</p>
+                  <strong><p style={{ fontSize:11, color:"#9ca3af", textAlign:"center", marginTop:10 }}>Note: This scholarship test is available only in these branches, not in all Vignan branches.</p></strong>
 
                 </>
               ) : (
@@ -407,7 +407,7 @@ export default function App() {
             <div className="sec-hd">
               <div className="pill-b">4 LOCATIONS</div>
               <span className="st" style={{ color:"#1a1a2e" }}>Choose Your Nearest Campus</span>
-              <span  style={{ color:"#1a1a2e",fontsize:"12px" }}>Note: This scholarship test is available only in these branches, not in all Vignan branches.</span>
+              <strong><span  style={{ color:"#1a1a2e",fontsize:"12px" }}>Note: This scholarship test is available only in these branches, not in all Vignan branches.</span></strong>
             </div>
             <div className="g4">
               {BRANCHES.map(b => (
