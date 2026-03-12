@@ -405,6 +405,7 @@ export default function App() {
             <div className="sec-hd">
               <div className="pill-b">4 LOCATIONS</div>
               <span className="st" style={{ color:"#1a1a2e" }}>Choose Your Nearest Campus</span>
+              <span className="st" style={{ color:"#1a1a2e",fontsize:"12px" }}>Note: This scholarship test is available only in these branches, not in all Vignan branches.</span>
             </div>
             <div className="g4">
               {BRANCHES.map(b => (
