@@ -248,14 +248,14 @@ export default function App() {
               <div style={{ marginBottom:16 }}>
                 <span style={{ display:"inline-flex", alignItems:"center", gap:6, background:"rgba(251,191,36,.18)", border:"1px solid rgba(251,191,36,.4)", borderRadius:50, padding:"6px 14px" }}>
                   <span>🗓️</span>
-                  <span style={{ fontSize:12, fontWeight:700, color:"#fcd34d" }}>June 28th, Sunday · All 4 Branches</span>
+                  <span style={{ fontSize:12, fontWeight:700, color:"#fcd34d" }}>June 22nd to 29th · All 4 Branches</span>
                 </span>
               </div>
 
               <h1 className="hl" style={{ marginBottom:16 }}>
-                Hyderabad's<br />
-                <span style={{ color:"#fbbf24" }}>BIGGEST</span><br />
-                Scholarship Test
+                Vignan's<br />
+                <span style={{ color:"#fbbf24" }}>SCHOLORSHIP</span><br />
+                WEEK
               </h1>
 
               <p style={{ fontSize:16, color:"rgba(255,255,255,.88)", lineHeight:1.7, marginBottom:22, maxWidth:500 }}>
@@ -305,7 +305,7 @@ export default function App() {
               {!submitted ? (
                 <>
                   <h3 style={{ fontFamily:"'Bebas Neue'", fontSize:24, color:"#1a56db", textAlign:"center", marginBottom:4 }}>Register Your Child</h3>
-                  <p style={{ fontSize:13, color:"#6b7280", textAlign:"center", marginBottom:18 }}>Scholarship Test · June 28, 2026</p>
+                  <p style={{ fontSize:13, color:"#6b7280", textAlign:"center", marginBottom:18 }}>Scholarship Test · June 22nd to 29th, 2026</p>
                   <div style={{ display:"flex", flexDirection:"column", gap:10 }}>
                     <input className="fi" placeholder="Student's Full Name *" value={form.name} onChange={e => setForm({...form, name:e.target.value})} />
                     <input className="fi" placeholder="Parent's Name" value={form.parent} onChange={e => setForm({...form, parent:e.target.value})} />
@@ -335,7 +335,7 @@ export default function App() {
                     Thank you, <strong>{form.name}</strong>!<br />We'll call you at <strong>{form.phone}</strong>.
                   </p>
                   <div style={{ marginTop:16, background:"#f0f4ff", borderRadius:12, padding:16 }}>
-                    <div style={{ fontWeight:800, color:"#1a56db" }}>June 28, 2026</div>
+                    <div style={{ fontWeight:800, color:"#1a56db" }}>June 22nd to 29th, 2026</div>
                     <div style={{ color:"#6b7280", fontSize:14, marginTop:4 }}>Branch: {form.branch}</div>
                   </div>
                 </div>
@@ -517,7 +517,7 @@ export default function App() {
               Your Child's Best Opportunity<br />Is Just One Test Away!
             </h2>
             <p style={{ fontSize:16, color:"rgba(255,255,255,.9)", lineHeight:1.65, maxWidth:460, margin:"0 auto 28px" }}>
-              Join students across Hyderabad competing for ₹2 Crore in scholarships. June 28th — don't miss it!
+              Join students across Hyderabad competing for ₹2 Crore in scholarships. June 22nd to 29th — don't miss it!
             </p>
             <button onClick={goForm} className="btn-o"
               style={{ fontSize:18, padding:"16px 44px", background:"#fff", color:"#f97316", boxShadow:"0 10px 34px rgba(0,0,0,.18)" }}>
@@ -539,7 +539,7 @@ export default function App() {
         {/* ── MOBILE STICKY BAR ── */}
         <div className="mob-bar">
           <button className="btn-o pulse" onClick={goForm} style={{ width:"100%", fontSize:15, padding:"14px" }}>
-            🎓 Register FREE – June 28th Scholarship Test
+            🎓 Register FREE – June 22nd to 29th Scholarship Test
           </button>
         </div>
 
