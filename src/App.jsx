@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const SHEET_URL = "https://script.google.com/macros/s/AKfycbzku3AU1EBBMyC2LhGFyBjCepBZesUkF8i51HniHkiisnSH5c6TjUUkmiBmnr8bWkMo/exec";
+const SHEET_URL = "https://script.google.com/macros/s/AKfycbwVyHjKILC9tpbaKKpq7XES0mt6o9ZyFvhZfix8R2wm0E9aiqz1gLlC4o7dljFEjdoi/exec";
 
 const BRANCHES = [
   { name: "ECIL", full: "Vignan School – ECIL", address: "Lotus Colony, Shiva Sai Enclave, ECIL, Telangana 500083", phone: "+91 97019 33455", qr: "/Ecil Location.png" },
