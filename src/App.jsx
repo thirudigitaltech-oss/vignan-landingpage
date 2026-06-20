@@ -39,23 +39,6 @@ export default function App() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => {
-    const target = new Date("2026-06-22T10:00:00");
-    
-    const tick = () => {
-      const diff = target.getTime() - Date.now();
-      if (diff <= 0) return;
-      setCd({
-        days: Math.floor(diff / 86400000),
-        hours: Math.floor((diff % 86400000) / 3600000),
-        minutes: Math.floor((diff % 3600000) / 60000),
-        seconds: Math.floor((diff % 60000) / 1000),
-      });
-    };
-    tick();
-    const id = setInterval(tick, 1000);
-    return () => clearInterval(id);
-  }, []);
 
   const submit = async () => {
     if (!form.name || !form.phone || !form.grade || !form.branch) {
@@ -276,17 +259,7 @@ export default function App() {
                 ))}
               </div>
 
-              <div style={{ marginBottom:24 }}>
-                <div style={{ fontSize:11, color:"rgba(255,255,255,.5)", letterSpacing:1.5, textTransform:"uppercase", marginBottom:8 }}>Exam Starts From june 22nd to 29th</div>
-                <div className="cd-row">
-                  {Object.entries(cd).map(([k,v]) => (
-                    <div key={k} className="cd-box">
-                      <div style={{ fontFamily:"'Bebas Neue'", fontSize:28, color:"#fbbf24", lineHeight:1 }}>{String(v).padStart(2,"0")}</div>
-                      <div style={{ fontSize:10, color:"rgba(255,255,255,.55)", textTransform:"uppercase", letterSpacing:1 }}>{k}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
+             
 
               <div className="hero-ctas" style={{ display:"flex", gap:16, alignItems:"center", flexWrap:"wrap" }}>
                 <button className="btn-o pulse" onClick={goForm} style={{ fontSize:15, padding:"14px 32px" }}>🎓 Register for FREE Now</button>
