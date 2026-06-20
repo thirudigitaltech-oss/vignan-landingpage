@@ -40,7 +40,8 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    const target = new Date("2026-06-28T10:00:00");
+    const target = new Date("2026-06-22T10:00:00");
+    
     const tick = () => {
       const diff = target.getTime() - Date.now();
       if (diff <= 0) return;
@@ -276,7 +277,7 @@ export default function App() {
               </div>
 
               <div style={{ marginBottom:24 }}>
-                <div style={{ fontSize:11, color:"rgba(255,255,255,.5)", letterSpacing:1.5, textTransform:"uppercase", marginBottom:8 }}>Exam Starts In</div>
+                <div style={{ fontSize:11, color:"rgba(255,255,255,.5)", letterSpacing:1.5, textTransform:"uppercase", marginBottom:8 }}>Exam Starts From june 22nd to 29th</div>
                 <div className="cd-row">
                   {Object.entries(cd).map(([k,v]) => (
                     <div key={k} className="cd-box">
