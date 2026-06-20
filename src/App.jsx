@@ -254,7 +254,7 @@ export default function App() {
 
               <h1 className="hl" style={{ marginBottom:16 }}>
                 Vignan's<br />
-                <span style={{ color:"#fbbf24" }}>SCHOLORSHIP</span><br />
+                <span style={{ color:"#fbbf24" }}>scholarship</span><br />
                 WEEK
               </h1>
 
